@@ -8,7 +8,6 @@ int main(void)
     char *s = " ";
     int count;
 
-
     // Prompt user for a number between 0 and 23. Assigns count to the user input for height - 1, to create enough spaces
     do
     {
@@ -26,12 +25,10 @@ int main(void)
         for (int j = 0; j < brick; j++)
         {
             printf("#");
-
-        }
+        } // ends the "j" for loop
         // Prints a line break after the row is complete, then increments brick and decrements count, to ensure next row is correct
         printf("\n");
         brick++;
         count--;
-    }
-
+    } // ends the "i" for loop
 }
