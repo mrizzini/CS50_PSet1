@@ -1,3 +1,5 @@
+// Says hello to user
+
 #include <stdio.h>
 
 int main(void)
