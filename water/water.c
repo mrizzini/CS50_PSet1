@@ -12,5 +12,7 @@ int main(void)
     while (minutes < 0);
 
     int bottles = minutes * 12; // the var bottles gets assigned the formula to determine how many bottles they will use
+    // int bottles = (minutes * 192) / 16; // OR do this. what's the difference?
+
     printf("Bottles: %i\n", bottles); // prints the result
 }
