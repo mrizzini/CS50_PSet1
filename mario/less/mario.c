@@ -12,7 +12,7 @@ int main(void)
     do
     {
         n = get_int("Height: ");
-        count = n -1;
+        count -= 1;
     }
     while (n < 0 || n > 23);
 
