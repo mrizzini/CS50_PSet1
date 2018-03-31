@@ -11,6 +11,6 @@ int main(void)
     }
     while (minutes < 0);
 
-    int bottles = (minutes * 192) / 16; // the var bottles gets assigned the formula to determine how many bottles they will use
-    printf("%i\n", bottles); // prints the result
+    int bottles = minutes * 12; // the var bottles gets assigned the formula to determine how many bottles they will use
+    printf("Bottles: %i\n", bottles); // prints the result
 }
