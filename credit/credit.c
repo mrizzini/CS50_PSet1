@@ -4,30 +4,50 @@
 
 int main(void)
 {
-
     int cardNum;
+    int cardNumOriginal;
+    int cardNumSum;
+    int test = 0;
     //int lastDigit;
-    int secondLastDigit;
+    // int evenSums = 0;
+    int secondLastDigitSum = 0;
+    // int oddNums = 0;
 
     do
     {
-        cardNum = get_long_long("Number: ");
+        cardNumOriginal = get_long_long("Number: ");
+        cardNum = cardNumOriginal;
+        cardNumSum = cardNumOriginal;
     }
     while (cardNum <= 0);
 
-    secondLastDigit = (cardNum / 10) % 10;
+ //   secondLastDigit += (cardNum / 10) % 10;
 
     // for (int i = 0; i < )
 
-    while(cardNum)
+
+    while (cardNumSum)
     {
-        printf("%d\n", cardNum % 10);
-        cardNum /= 10;
+        test += (cardNumSum % 10);
+        printf("cardNumSum is %i\n", cardNumSum);
+        printf("TEST IS %i\n\n", test);
+        cardNumSum /= 100;
     }
 
 
+    while(cardNum)
+    {
+        secondLastDigitSum += (cardNum % 100 / 10) * 2;
 
-    //  printf("last Digit is %i\n", cardNum);
+        // printf("%d\n", cardNum % 10);
+        printf("cardNum is %i\n", cardNum);
+        printf("secondLastDigitSum is %i\n", secondLastDigitSum);
+        // printf("evenSums is %i\n", evenSums);        // printf("oddNums is %i\n", oddNums);
+        printf("\n");
+        cardNum /= 100;
+    }
+
+
 
 
 
