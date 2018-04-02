@@ -4,98 +4,81 @@
 
 int main(void)
 {
-    long long cardNum;
     long long cardNumOriginal;
+    long long cardNum;
     long long cardNumSum;
     int test = 0;
-    //int lastDigit;
-    // int evenSums = 0;
     int secondLastDigitSum = 0;
     int total;
-    // int oddNums = 0;
 
     do
     {
-        cardNumOriginal = get_long_long("Number: ");
-        cardNum = cardNumOriginal;
-        cardNumSum = cardNumOriginal;
+        cardNumOriginal = get_long_long("Number: "); // gets credit card # and stores in a long long
+        cardNum = cardNumOriginal; // stores CC# into a var to be modified
+        cardNumSum = cardNumOriginal; // stores CC# into a var to be modified
     }
-    while (cardNumOriginal <= 0);
+    while (cardNumOriginal <= 0); // prompts user over and over until correctcredit card entered
 
-
-
- //   secondLastDigit += (cardNum / 10) % 10;
-
-    // for (int i = 0; i < )
-
-
-    while (cardNumSum)
+    while (cardNumSum) // while there is numbers in cardNumSum
     {
-        test += (cardNumSum % 10);
-        // printf("cardNumSum is %llu\n", cardNumSum);
-        // printf("TEST IS %i\n\n", test);
-        cardNumSum /= 100;
+        test += (cardNumSum % 10); // add in the last digit
+        cardNumSum /= 100; // delete last two digist
     }
 
 
-    while(cardNum)
+    while (cardNum) // while there are numbers in cardNum
     {
-        if (((cardNum % 100 / 10) * 2) >= 10)
+        if (((cardNum % 100 / 10) * 2) >= 10) // if the second to last digit multiplied by 2 is over 10, do this
         {
             int num = (cardNum % 100 / 10) * 2;
-            int sum=0,rem;
-            while(num > 0)
+            int sum = 0, rem;
+            while (num > 0)
             {
-                rem=num%10;
-                sum+=rem;
-                num=num/10;
+                rem = num % 10;
+                sum += rem;
+                num = num / 10;
             }
-            secondLastDigitSum += sum;
+            secondLastDigitSum += sum; // algorithm to add the digits of the double digit number
         }
         else
         {
-        secondLastDigitSum += (cardNum % 100 / 10) * 2;
+            secondLastDigitSum += (cardNum % 100 / 10) * 2; // else add in the digit to the sum
         }
-
-
-        // // printf("%d\n", cardNum % 10);
-        // printf("cardNum is %llu\n", cardNum);
-        // printf("secondLastDigitSum is %i\n", secondLastDigitSum);
-        // // printf("evenSums is %i\n", evenSums);        // printf("oddNums is %i\n", oddNums);
-        // printf("\n");
-        cardNum /= 100;
+        cardNum /= 100; // delete last two digits from CC#
     }
 
+    total = test + secondLastDigitSum; // adds in test to secondLastDigitSum
 
-
-
-    total = test + secondLastDigitSum;
-    // printf("total is %i\n", total);
-
-    if (total % 10 == 0 && cardNumOriginal >= 340000000000000 && cardNumOriginal <= 349999999999999)
+    if (total % 10 == 0)
     {
-        printf("AMEX\n");
-    }
-    else if (total % 10 == 0 && cardNumOriginal >= 370000000000000 && cardNumOriginal <= 379999999999999)
-    {
-        printf("AMEX\n");
-    }
-    else if (total % 10 == 0 && cardNumOriginal >= 5100000000000000 && cardNumOriginal <= 5599999999999999)
-    {
-        printf("MASTERCARD\n");
-    }
-    else if (total % 10 == 0 && cardNumOriginal >= 4000000000000 && cardNumOriginal <= 4999999999999)
-    {
-        printf("VISA\n");
-    }
-    else if (total % 10 == 0 && cardNumOriginal >= 4000000000000000 && cardNumOriginal <= 4999999999999999)
-    {
-        printf("VISA\n");
+        if (cardNumOriginal >= 340000000000000 && cardNumOriginal <= 349999999999999) // validation for different companies
+        {
+            printf("AMEX\n");
+        }
+        else if (cardNumOriginal >= 370000000000000 && cardNumOriginal <= 379999999999999)
+        {
+            printf("AMEX\n");
+        }
+        else if (cardNumOriginal >= 5100000000000000 && cardNumOriginal <= 5599999999999999)
+        {
+            printf("MASTERCARD\n");
+        }
+        else if (cardNumOriginal >= 4000000000000 && cardNumOriginal <= 4999999999999)
+        {
+            printf("VISA\n");
+        }
+        else if (cardNumOriginal >= 4000000000000000 && cardNumOriginal <= 4999999999999999)
+        {
+            printf("VISA\n");
+        }
+        else
+        {
+            printf("INVALID\n");
+        }
     }
     else
     {
         printf("INVALID\n");
     }
-
 
 }
