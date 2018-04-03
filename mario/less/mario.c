@@ -6,13 +6,13 @@ int main(void)
     int n; // declaring variable n for use later
     int brick = 2;
     char *s = " ";
-    int count;
+    int count = 0;
 
     // Prompt user for a number between 0 and 23. Assigns count to the user input for height - 1, to create enough spaces
     do
     {
         n = get_int("Height: ");
-        count -= 1;
+        count = n - 1;
     }
     while (n < 0 || n > 23);
 
