@@ -5,7 +5,7 @@ int main(void)
 {
     int n; // declaring variable n for use later
     int brick = 2;
-    char *s = " ";
+    // string s = " ";
     int count = 0;
 
     // Prompt user for a number between 0 and 23. Assigns count to the user input for height - 1, to create enough spaces
@@ -20,7 +20,11 @@ int main(void)
     for (int i = 0; i < n; i++)
     {
         // Prints out the correct amount of spaces for the first row of bricks, using the count variable
-        printf("%*.s", count, s);
+        // printf("%*.s", count, s);
+        for (int num = 0; num < count; num++)
+        {
+            printf(" ");
+        }
         // Print out this many columns
         for (int j = 0; j < brick; j++)
         {
