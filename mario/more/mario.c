@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+//PRjm: n int variable name could be more descriptive
+
 int main(void)
 {
     int n; // declaring variable n for use later
@@ -10,7 +12,7 @@ int main(void)
     // Prompt user for a number between 0 and 23. Assigns count to the user input for height - 1, to create enough spaces
     do
     {
-        n = get_int("Height: ");
+        n = get_int("Height: "); //PRjm: n variable could be more descriptive
         count = n - 1;
     }
     while (n < 0 || n > 23);
@@ -32,7 +34,7 @@ int main(void)
         } // ends the "j" for loop
 
         // prints out 2 spaces "  ", 1 time to account for the gap
-        for (int q = 0; q < 1; q++)
+        for (int q = 0; q < 1; q++) //PRjm: I like the way you had it print both spaces one time
         {
             printf("  ");
         } // ends the "q" for loop

@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+//PRjm: I did the same thing, but could put 12 in a variable to avoid hard coded "magic number"
+
 int main(void)
 {
     int minutes;

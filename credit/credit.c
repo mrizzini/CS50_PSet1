@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <math.h>
 
+//PRjm: some of the loops are a bit difficult to follow what is going on, could use more descriptive variable names but adding comments may be easier and clearer
+        //...especially the while loop from lines 31-50
 int main(void)
 {
     long long cardNumOriginal;
@@ -30,8 +32,8 @@ int main(void)
     {
         if (((cardNum % 100 / 10) * 2) >= 10) // if the second to last digit multiplied by 2 is over 10, do this
         {
-            int num = (cardNum % 100 / 10) * 2;
-            int sum = 0, rem;
+            int num = (cardNum % 100 / 10) * 2; //PRjm: num, sum and rem variable names are a little confusing, a bit difficult to follow what is going on here
+            int sum = 0, rem;                       //PRjm: could add comments to describe what each one is doing/storing
             while (num > 0)
             {
                 rem = num % 10;

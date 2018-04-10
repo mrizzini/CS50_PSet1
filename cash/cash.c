@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <math.h>
 
+//PRjm: converting change from float to in and round could potentially be done in smame step
+
 int main(void)
 {
     float change; // intializes change float
@@ -13,7 +15,7 @@ int main(void)
     }
     while (change < 0);
 
-    change = change * 100; // converts float change to int.
+    change = change * 100; // converts float change to int.             //PRjm: line 18 and 19 could potentially be done in one step
     change = round(change); // rounds it to the nearest integer value
 
     while (change >= 25) // if change is greater than or = 25. minus 25 from total change, and add coin
